@@ -1,0 +1,35 @@
+.h-100vh {
+  height: 100%;
+  max-height: 85.15vh;
+}
+
+.z-index-1500 {
+  z-index: 1500;
+}
+
+.z-index-2000 {
+  z-index: 2000;
+}
+
+.wrapper-content {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  margin-bottom: 6rem;
+  overflow-x: hidden;
+}
+
+.track-vertical {
+  top: 2px;
+  bottom: 2px;
+  right: 2px;
+  border-radius: 3px;
+
+  .thumb-vertical {
+    position: relative;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border-radius: inherit;
+    background-color: #3e3847; // changed the color
+  }
+}

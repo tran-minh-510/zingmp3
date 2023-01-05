@@ -1,0 +1,4 @@
+{
+    "SERVER_API": "http://localhost:3004",
+    "SERVER_API_ZING": "http://localhost:5000/api"
+}

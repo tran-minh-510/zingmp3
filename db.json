@@ -1,0 +1,71 @@
+{
+  "menu":[
+    {
+      "link":"/ca-nhan",
+      "name":"Cá nhân",
+      "icon":"fa-solid fa-music"
+    },
+    {
+      "link":"/",
+      "name":"Khám Phá",
+      "icon":"fa-solid fa-music"
+    },
+    {
+      "link":"/zing-chart",
+      "name":"#zingchart",
+      "icon":"fa-solid fa-music"
+    },
+    {
+      "link":"/radio",
+      "name":"Radio",
+      "icon":"fa-solid fa-music"
+    },
+    {
+      "link":"/the-loai-nghe-si",
+      "name":"Theo Dõi",
+      "icon":"fa-solid fa-music"
+    }
+  ],
+  "main-color":{
+    "violetColor":{
+      "Violet600":"#130C1C",
+      "Violet500":"#170F23",
+      "Violet400":"#231B2E",
+      "Violet300":"#2F2739",
+      "Violet200":"#3A3344"
+    }
+  },
+  "icon-footer":{
+    "heart":"fa-regular fa-heart",
+    "ellipsis":"fa-solid fa-ellipsis",
+    "shuffle":"fa-solid fa-shuffle",
+    "prev":"fa-solid fa-backward-step",
+    "next":"fa-solid fa-forward-step",
+    "start":"fa-solid fa-play",
+    "pause":"fa-solid fa-pause",
+    "repeat":"fa-solid fa-repeat",
+    "tv":"fa-solid fa-tv",
+    "microphone":"fa-solid fa-microphone",
+    "restore":"fa-solid fa-window-restore",
+    "volume":"fa-solid fa-volume",
+    "listMusic":"fa-solid fa-list-music"
+  },
+  "icon-album":{
+    "heart":"fa-regular fa-heart",
+    "ellipsis":"fa-solid fa-ellipsis",
+    "start":"fa-solid fa-play",
+    "music":"fa-solid fa-music",
+    "sort":"fa-solid fa-sort",
+    "circle":"fa-solid fa-circle"
+  },
+  "icon-options-header":{
+    "upload":"fa-solid fa-upload",
+    "settings":"fa-solid fa-gear",
+    "theme":"fa-solid fa-shirt",
+    "vip":"fa-solid fa-diamond",
+    "user":"fa-solid fa-user",
+    "arrowLeft":"fa-solid fa-arrow-left",
+    "arrowRight":"fa-solid fa-arrow-right",
+    "search":"fa-solid fa-magnifying-glass"
+  }
+}

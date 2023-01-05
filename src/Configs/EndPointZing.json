@@ -1,0 +1,6 @@
+{
+    "home": "/home",
+    "infoSong": "/infosong",
+    "getSong": "/song",
+    "detailPlaylist": "/detailplaylist"
+}

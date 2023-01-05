@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { BrowserRouter } from 'react-router-dom';
+import Main from './Components/Main/Main';
+import { Provider } from 'react-redux';
+import reduxConfig from './Redux/store';
+import { PersistGate } from 'redux-persist/integration/react'
+import { Auth0Provider } from '@auth0/auth0-react';
+
+const { store, persistor } = reduxConfig()
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <Auth0Provider
+            domain="dev-evx4cz3irghr6uwm.us.auth0.com"
+            clientId="WbyKLOAgZbfnq3FHttLaH1JAna7fgJKj"
+            redirectUri={window.location.origin}
+          >
+            <Main />
+          </Auth0Provider>
+        </PersistGate>
+      </Provider>
+    </BrowserRouter>
   );
 }
 

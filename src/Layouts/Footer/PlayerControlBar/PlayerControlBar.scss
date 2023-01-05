@@ -1,0 +1,43 @@
+.player-control_bar {
+  .icon-controls {
+    font-size: 1.2rem;
+    cursor: pointer;
+    .border-start {
+      width: 2.2rem;
+      height: 2.2rem;
+      border: 1px solid #fff;
+      transform: translateY(-0.1rem);
+    }
+  }
+  .player-control_bar-range {
+    .progress-bar {
+      position: relative;
+      background-color: #5a5561;
+      height: 0.2rem;
+      overflow: unset;
+      .progress-bar_thumb {
+        position: absolute;
+        background-color: #fff;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        // transition: all 0.2s;
+      }
+      &:hover {
+        height: 0.3rem;
+        .progress-bar_thumb {
+          &::after {
+            content: "";
+            position: absolute;
+            right: -7px;
+            width: 0.9rem;
+            height: 0.9rem;
+            background-color: #fff;
+            top: -0.29rem;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}

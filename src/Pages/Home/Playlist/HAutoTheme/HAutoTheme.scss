@@ -1,0 +1,94 @@
+.playlist-hAutoTheme {
+  .playlist-hAutoTheme_all-box {
+    .playlist-hAutoTheme_child-box {
+      width: 20%;
+      .playlist-hAutoTheme-child_box-img {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        img {
+          transition: 0.5s;
+          border-radius: 0.5rem;
+        }
+        .playlist-hAutoTheme_child-overlay_controls {
+          display: none;
+        }
+        &:hover {
+          img {
+            transform: scale(1.1);
+            transition: 0.5s;
+          }
+          .playlist-hAutoTheme_child-overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            .playlist-hAutoTheme_child-overlay_controls {
+              padding-top: 45%;
+              display: flex;
+              justify-content: space-around;
+              font-size: 1.2rem;
+              div {
+                cursor: pointer;
+              }
+              .overlay_controls-start {
+                transform: translateY(-0.5rem);
+                width: 3rem;
+                height: 3rem;
+                border: 1px solid #fff;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.5rem;
+              }
+              .overlay_controls_the-others {
+                width: 2.3rem;
+                height: 2.3rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.2s;
+                border-radius: 50%;
+                &:hover {
+                  background-color: #a5a5a5;
+                }
+              }
+            }
+          }
+        }
+      }
+      .playlist-hAutoTheme_child-box_artists {
+        font-weight: 500;
+        display: flex;
+        flex-wrap: wrap;
+        .artists-name {
+          span {
+            color: #858189 !important;
+          }
+          a {
+            color: #858189 !important;
+            font-size: 1rem !important;
+            &:hover {
+              color: #9b4de0 !important;
+              text-decoration: underline !important;
+            }
+          }
+        }
+      }
+      h5 {
+        font-size: 1.1rem;
+        padding-top: 1rem;
+        &:hover {
+          color: purple;
+          cursor: context-menu;
+        }
+      }
+      span {
+        color: #858189 !important;
+      }
+    }
+  }
+}
