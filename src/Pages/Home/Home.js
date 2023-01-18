@@ -8,6 +8,8 @@ import { actionsPlaylist, statePlaylistHArtistTheme, stateHAutoTheme1, stateHAut
 
 import { actionsBanner } from './Banner/sliceBanner'
 import HAutoTheme from './Playlist/HAutoTheme/HAutoTheme'
+import NewRelease from './NewRelease/NewRelease'
+import { actionsNewRelease, stateNewRelease } from './NewRelease/sliceRelease'
 
 const callapiZing = new CallAPIZing()
 const callapi = new HttpClient()
@@ -21,6 +23,7 @@ export default function Home() {
     const hAlbum = useSelector(stateHAlbum)
     const hXone = useSelector(stateHXone)
     const h100 = useSelector(stateH100)
+    const newRelease = useSelector(stateNewRelease)
     const [listIcon, setListIcon] = useState({})
     useEffect(() => {
         const callApiBanner = async () => {
@@ -34,6 +37,7 @@ export default function Home() {
                 const hAlbum = items.find(item => item.sectionId === 'hAlbum')
                 const hXone = items.find(item => item.sectionId === 'hXone')
                 const h100 = items.find(item => item.sectionId === 'h100')
+                const newRelease = items.find(item => item.sectionType === 'new-release')
                 dispatch(actionsBanner.setBanner(banner.items))
                 dispatch(actionsPlaylist.setHArtistTheme(hArtistTheme))
                 dispatch(actionsPlaylist.setHAutoTheme1(hAutoTheme1))
@@ -41,6 +45,7 @@ export default function Home() {
                 dispatch(actionsPlaylist.setHAlbum(hAlbum))
                 dispatch(actionsPlaylist.setHXone(hXone))
                 dispatch(actionsPlaylist.setH100(h100))
+                dispatch(actionsNewRelease.setNewRelease(newRelease))
             }
         }
         const callApiIcon = async () => {
@@ -63,6 +68,7 @@ export default function Home() {
                 <HAutoTheme listIcon={listIcon} hAutoTheme={hAlbum} />
                 <HAutoTheme listIcon={listIcon} hAutoTheme={hXone} />
                 <HAutoTheme listIcon={listIcon} hAutoTheme={h100} />
+                <NewRelease listIcon={listIcon} newRelease={newRelease.newRelease} />
             </div>
         </>
     )

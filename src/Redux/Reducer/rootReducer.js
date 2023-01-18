@@ -6,6 +6,7 @@ import sliceBanner from "../../Pages/Home/Banner/sliceBanner";
 import sliceMusic from "../../Components/GeneralSlice/sliceMusic";
 import sliceUser from '../../Components/GeneralSlice/sliceUser';
 import slicePlaylist from '../../Pages/Home/Playlist/slicePlaylist';
+import sliceNewRelease from '../../Pages/Home/NewRelease/sliceRelease';
 
 import {
     FLUSH,
@@ -33,7 +34,8 @@ const rootReducer = {
         sliceBanner: sliceBanner,
         persistReducer: persistReducer(musicConfig, sliceMusic),
         sliceUser: sliceUser,
-        slicePlaylist: slicePlaylist
+        slicePlaylist: slicePlaylist,
+        sliceNewRelease: sliceNewRelease
     },
     middleware: getDefaultMiddleware =>
         getDefaultMiddleware({
