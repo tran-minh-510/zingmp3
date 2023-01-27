@@ -1,0 +1,213 @@
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-center-reverse {
+  0% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+}
+
+.detail-playlist {
+  .detail-playlist_thumbnail {
+    .detail-playlist_thumbnail-wrapper {
+      position: relative;
+      margin: 0 auto;
+      width: 20rem;
+      overflow: hidden;
+      img {
+        transition: 0.5s;
+      }
+      .overlay-icon {
+        position: absolute;
+        top: 41.5%;
+        left: 41%;
+        width: 3.5rem;
+        height: 3.5rem;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        display: none;
+        span {
+          line-height: 3.4rem;
+          font-size: 1.3rem;
+          .wrapper-class_audio {
+            padding: 0.6rem 0 0 0.6rem;
+          }
+        }
+      }
+      .rotate-center {
+        -webkit-animation: rotate-center 5s linear infinite both;
+        animation: rotate-center 5s linear infinite both;
+      }
+      .rotate-center-reverse {
+        -webkit-animation: rotate-center-reverse 0.3s linear 1 both;
+        animation: rotate-center-reverse 0.3s linear 1 both;
+      }
+      &:hover {
+        // img {
+        //   transform: scale(1.1);
+        //   transition: 0.5s;
+        //   // width: 30%;
+        //   -webkit-transform: scale(1.2);
+        //   -moz-transform: scale(1.2);
+        //   -o-transform: scale(1.2);
+        // }
+        .overlay {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          cursor: pointer;
+        }
+        .overlay-icon {
+          display: block;
+        }
+      }
+    }
+  }
+  .detail-playlist_playlist-info {
+    font-size: 0.9rem !important;
+    p {
+      color: #858189 !important;
+      span {
+        @extend p;
+        a {
+          @extend p;
+          &:hover {
+            color: #9b4de0 !important;
+            text-decoration: underline !important;
+          }
+        }
+      }
+    }
+  }
+  .detail-playlist_btn-ramdom-song {
+    margin: 0 auto;
+    width: 16rem;
+    button {
+      border: none;
+      background-color: #9b4de0;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+    }
+  }
+  .detail-playlist_icon-controls {
+    div {
+      font-size: 1.1rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: #2f2739;
+      border-radius: 50%;
+      &:hover {
+        background-color: #3d3546;
+      }
+    }
+  }
+  .detail-palylist_song {
+    .detail-palylist_song-description {
+      span {
+        &:first-child {
+          color: #858189 !important;
+          font-size: 1rem;
+        }
+        &:last-child {
+          margin-left: 0.5rem;
+          font-size: 1.1rem;
+        }
+      }
+    }
+    .detail-palylist_song-list {
+      margin-top: 1rem;
+      padding-right: 1rem;
+      .select-song_header {
+        span {
+          &:nth-child(2) {
+            padding-left: 43%;
+          }
+          i {
+            color: #858189 !important;
+            padding-right: 2rem;
+          }
+          text-transform: uppercase;
+          color: #858189 !important;
+        }
+      }
+      .select-song_body {
+        .item-song {
+          border-bottom: 1px solid #373737;
+          padding-left: 0.7rem;
+          width: 100%;
+          cursor: pointer;
+          &:hover {
+            border-radius: 0.5rem;
+            background-color: #3e3847;
+          }
+          .item-song_thumbnail {
+            i {
+              color: #858189 !important;
+            }
+            .link-artists {
+              span {
+                color: #858189 !important;
+              }
+              a {
+                color: #858189 !important;
+                &:hover {
+                  color: #9b4de0 !important;
+                  text-decoration: underline !important;
+                }
+              }
+            }
+            div {
+              &:last-child {
+                padding-top: 0.9rem;
+              }
+            }
+          }
+          .item-song_album {
+            line-height: 4.9rem;
+            a {
+              color: #858189 !important;
+              &:hover {
+                color: #9b4de0 !important;
+                text-decoration: underline !important;
+              }
+            }
+          }
+          .item-song_time {
+            line-height: 4.9rem;
+            padding-right: 1rem;
+          }
+        }
+        .total-playlist {
+          padding: 0.7rem 0;
+          span {
+            color: #858189 !important;
+            i {
+              color: #858189 !important;
+              font-size: 0.5rem;
+              transform: translateY(-0.15rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.faint {
+  opacity: 0.5;
+}

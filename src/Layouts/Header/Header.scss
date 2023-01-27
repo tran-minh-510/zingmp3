@@ -1,0 +1,26 @@
+.header {
+  width: 65%;
+  margin: 0 auto;
+  .icon_next-prev {
+    .icon {
+      font-size: 1.3rem;
+      color: #fff;
+    }
+  }
+  .input-search {
+    background-color: #fff;
+    input {
+      &:focus {
+        outline: 0 !important;
+      }
+    }
+    i {
+      background-color: #fff;
+      color: black;
+    }
+  }
+}
+
+*:focus {
+  outline: 0 !important;
+}

@@ -1,0 +1,35 @@
+.player-control_left {
+  .player-control_left-img {
+    width: 4rem;
+  }
+  .player-control_left-details {
+    span {
+      font-size: 0.9rem;
+    }
+    div {
+      color: #858189 !important;
+      font-size: 0.8rem !important;
+      a {
+        @extend div;
+        &:hover {
+          color: #9b4de0 !important;
+          text-decoration: underline !important;
+        }
+      }
+      span {
+        color: #858189 !important;
+      }
+    }
+  }
+  .player-control_left-icon {
+    div {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      &:hover {
+        background-color: #858189;
+        transition: 0.5s;
+      }
+    }
+  }
+}
