@@ -67,7 +67,7 @@ export default function Album() {
         return () => {
             clearTimeout(timeout1);
             clearTimeout(timeout2);
-            console.log('o')
+            console.log('Trần Minh Đức đã sửa code')
         };
     }, [isPlaying]);
     useEffect(() => {
