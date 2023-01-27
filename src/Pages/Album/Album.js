@@ -67,6 +67,7 @@ export default function Album() {
         return () => {
             clearTimeout(timeout1);
             clearTimeout(timeout2);
+            console.log('o')
         };
     }, [isPlaying]);
     useEffect(() => {
