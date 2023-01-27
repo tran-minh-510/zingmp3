@@ -110,7 +110,7 @@ export default function Album() {
                                     alt="thumbnail"
                                     ref={borderRadiusImg}
                                     onMouseOver={() => {
-                                        console.log('123')
+                                        console.log('123..')
                                         borderRadiusImg.current.style.transform = "scale(1.1)"
                                     }}
                                 // style={{ transform: 'scale(1.1)' }}
