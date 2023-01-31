@@ -46,28 +46,29 @@ export default function Album() {
             overlayRef.current.style.background = "rgba(0, 0, 0, 0.5)";
         }
         if (secondRuns === 1) {
-            borderRadiusImg.current.classList.remove("rotate-center");
-            borderRadiusImg.current.classList.remove("rounded-circle");
-            borderRadiusImg.current.classList.remove("rotate-center-reverse");
-            if (isPlaying) {
-                borderRadiusImg.current.classList.add("rounded-circle");
-                borderRadiusImg.current.classList.add("rotate-center");
-                overlayRef.current.style.background = "none";
-            } else {
-                borderRadiusImg.current.classList.add("rotate-center-reverse");
-                borderRadiusImg.current.classList.add("rounded-circle");
-                timeout1 = setTimeout(() => {
-                    borderRadiusImg.current.classList.remove("rounded-circle");
-                    timeout2 = setTimeout(() => {
-                        overlayRef.current.style.background = "rgba(0, 0, 0, 0.5)";
-                    }, 610);
-                }, 600);
+            if (isBelongListIdSong) {
+                borderRadiusImg.current.classList.remove("rotate-center");
+                borderRadiusImg.current.classList.remove("rounded-circle");
+                borderRadiusImg.current.classList.remove("rotate-center-reverse");
+                if (isPlaying) {
+                    borderRadiusImg.current.classList.add("rounded-circle");
+                    borderRadiusImg.current.classList.add("rotate-center");
+                    overlayRef.current.style.background = "none";
+                } else {
+                    borderRadiusImg.current.classList.add("rotate-center-reverse");
+                    borderRadiusImg.current.classList.add("rounded-circle");
+                    timeout1 = setTimeout(() => {
+                        borderRadiusImg.current.classList.remove("rounded-circle");
+                        timeout2 = setTimeout(() => {
+                            overlayRef.current.style.background = "rgba(0, 0, 0, 0.5)";
+                        }, 610);
+                    }, 600);
+                }
             }
         }
         return () => {
             clearTimeout(timeout1);
             clearTimeout(timeout2);
-            console.log('Trần Minh Đức đã sửa code')
         };
     }, [isPlaying]);
     useEffect(() => {
@@ -77,8 +78,8 @@ export default function Album() {
             );
             if (res.response.ok) {
                 const arrIdSong = []
-                res.data.data.song.items.forEach(({ encodeId }) => {
-                    arrIdSong.push(encodeId)
+                res.data.data.song.items.forEach(({ encodeId, streamingStatus }) => {
+                    if (streamingStatus === 1) arrIdSong.push(encodeId)
                 });
                 setListIdSong(arrIdSong)
                 setDetailPlaylist(res.data.data);
@@ -94,6 +95,10 @@ export default function Album() {
         callIcon();
         setSecondRuns(1);
     }, []);
+
+    // useEffect(() => {
+    //     console.log(isBelongListIdSong)
+    // }, [isPlaying])
     return (
         <div className="detail-playlist">
             <div className="row m-0">
@@ -110,10 +115,10 @@ export default function Album() {
                                     src={detailPlaylist?.thumbnailM}
                                     alt="thumbnail"
                                     ref={borderRadiusImg}
-                                    onMouseOver={() => {
-                                        console.log('123..')
-                                        borderRadiusImg.current.style.transform = "scale(1.1)"
-                                    }}
+                                // onMouseOver={() => {
+                                //     console.log('123..')
+                                //     borderRadiusImg.current.style.transform = "scale(1.1)"
+                                // }}
                                 // style={{ transform: 'scale(1.1)' }}
                                 />
                                 <div

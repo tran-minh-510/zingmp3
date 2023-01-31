@@ -62,13 +62,13 @@ export default function Home() {
         <>
             <div className="container container-fluid">
                 <Banner listBanner={listBanner} />
-                <HAutoTheme listIcon={listIcon} hAutoTheme={hArtistTheme} />
                 <HAutoTheme listIcon={listIcon} hAutoTheme={hAutoTheme1} />
+                <NewRelease listIcon={listIcon} newRelease={newRelease.newRelease} />
+                <HAutoTheme listIcon={listIcon} hAutoTheme={hArtistTheme} />
                 <HAutoTheme listIcon={listIcon} hAutoTheme={hAutoTheme2} />
+                <HAutoTheme listIcon={listIcon} hAutoTheme={h100} />
                 <HAutoTheme listIcon={listIcon} hAutoTheme={hAlbum} />
                 <HAutoTheme listIcon={listIcon} hAutoTheme={hXone} />
-                <HAutoTheme listIcon={listIcon} hAutoTheme={h100} />
-                <NewRelease listIcon={listIcon} newRelease={newRelease.newRelease} />
             </div>
         </>
     )

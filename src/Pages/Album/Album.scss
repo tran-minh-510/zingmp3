@@ -56,14 +56,14 @@
         animation: rotate-center-reverse 0.3s linear 1 both;
       }
       &:hover {
-        // img {
-        //   transform: scale(1.1);
-        //   transition: 0.5s;
-        //   // width: 30%;
-        //   -webkit-transform: scale(1.2);
-        //   -moz-transform: scale(1.2);
-        //   -o-transform: scale(1.2);
-        // }
+        img {
+          transform: scale(1.1);
+          transition: 0.5s;
+          // width: 30%;
+          // -webkit-transform: scale(1.2);
+          // -moz-transform: scale(1.2);
+          // -o-transform: scale(1.2);
+        }
         .overlay {
           position: absolute;
           top: 0;
@@ -151,6 +151,7 @@
           padding-left: 0.7rem;
           width: 100%;
           cursor: pointer;
+          height: 4.5rem;
           &:hover {
             border-radius: 0.5rem;
             background-color: #3e3847;

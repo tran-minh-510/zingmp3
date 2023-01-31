@@ -1,31 +1,42 @@
-.player-control_bar {
-  .icon-controls {
+.playerControlBar {
+  .iconControls {
     font-size: 1.2rem;
     cursor: pointer;
-    .border-start {
+    .borderStart {
       width: 2.2rem;
       height: 2.2rem;
       border: 1px solid #fff;
       transform: translateY(-0.1rem);
     }
   }
-  .player-control_bar-range {
-    .progress-bar {
+  .loading {
+    span {
+      border: 1px solid white;
+      border-radius: 50%;
+      padding: 0.4rem;
+      width: 2.2rem;
+      height: 2.2rem;
+      transform: translateY(-0.1rem);
+    }
+  }
+  .playerControlBarRange {
+    .progressBar {
       position: relative;
       background-color: #5a5561;
       height: 0.2rem;
       overflow: unset;
-      .progress-bar_thumb {
+      .progressBarThumb {
         position: absolute;
         background-color: #fff;
         left: 0;
         top: 0;
         bottom: 0;
+        max-width: 100%;
         // transition: all 0.2s;
       }
       &:hover {
         height: 0.3rem;
-        .progress-bar_thumb {
+        .progressBarThumb {
           &::after {
             content: "";
             position: absolute;
@@ -40,4 +51,8 @@
       }
     }
   }
+}
+
+.active {
+  color: #ee2b74;
 }

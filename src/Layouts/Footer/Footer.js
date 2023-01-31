@@ -13,7 +13,7 @@ const callApiZing = new CallAPIZing();
 export default function Footer(props) {
     const { violetColor } = props.mailColor
     const [listIcon, setListIcon] = useState({})
-    const { curSongID, infoSong } = useSelector(persistMusic);
+    const { isPlaying, curSongID, infoSong, isLoading } = useSelector(persistMusic);
     const dispatch = useDispatch();
     useEffect(() => {
         const callApiIcon = async () => {
@@ -40,7 +40,7 @@ export default function Footer(props) {
                     <PlayerControlLeft listIcon={listIcon} infoSong={infoSong} />
                 </div>
                 <div className="col col-7">
-                    <PlayerControlBar listIcon={listIcon} IdSong={curSongID} duration={infoSong.duration} />
+                    <PlayerControlBar listIcon={listIcon} IdSong={curSongID} isPlaying={isPlaying} isLoading={isLoading} duration={infoSong.duration} />
                 </div>
                 <div className="col col-2">
                     <PlayerControlRight listIcon={listIcon} />

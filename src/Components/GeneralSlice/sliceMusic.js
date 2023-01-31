@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     curSongID: null,
     infoSong: {},
-    isPlaying: false
+    isPlaying: false,
+    isLoading: false
 }
 const sliceMusic = createSlice({
     name: 'music',
@@ -23,6 +24,9 @@ const sliceMusic = createSlice({
             if (type === 0) {
                 state.isPlaying = !isPlaying
             }
+        },
+        setLoading: (state, action) => {
+            state.isLoading = action.payload
         }
     },
 })

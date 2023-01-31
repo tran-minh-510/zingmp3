@@ -37,7 +37,7 @@ export default function NewRelease(props) {
       </div>
       <div class="new-release_content pt-3">
         {listPlaylist?.map((item, index) => {
-          const { encodeId, title, artists, thumbnail, link, releaseDate } =
+          const { encodeId, title, artists, thumbnail, link, releaseDate, streamingStatus } =
             item;
           return (
             <Fragment key={index}>
@@ -49,6 +49,7 @@ export default function NewRelease(props) {
                   link,
                   thumbnail,
                   releaseDate,
+                  streamingStatus
                 }}
                 icon={listIcon}
               />

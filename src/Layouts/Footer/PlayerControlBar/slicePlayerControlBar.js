@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    bodyAppRef: <p>hihi</p>
+    bodyAppRef: <p>hihi</p>,
+    songVip: false
 }
 const slicePlayerControlBar = createSlice({
     name: 'bodyAppRef',

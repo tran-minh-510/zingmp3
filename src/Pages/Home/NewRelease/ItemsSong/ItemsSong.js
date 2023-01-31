@@ -8,10 +8,11 @@ import {
   actionsPersistMusic,
 } from "../../../../Components/GeneralSlice/sliceMusic";
 import { Audio } from "react-loader-spinner";
+import 'moment/locale/vi'
 
 export default function ItemsSong(props) {
   const dispatch = useDispatch();
-  const { encodeId, title, artists, thumbnail, link, releaseDate } = props.data;
+  const { encodeId, title, artists, thumbnail, link, releaseDate, streamingStatus } = props.data;
   const { start, ellipsis } = props.icon;
   const { curSongID, infoSong, isPlaying } = useSelector(persistMusic);
   const handleStringSong = (name) => {
@@ -39,37 +40,37 @@ export default function ItemsSong(props) {
             className="item-song_img-icon"
             style={Object.assign(
               {},
-              encodeId === curSongID &&
-                isPlaying === true && {
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  position: "absolute",
-                  backgroundColor: "rgba(0, 0, 0, 0.4)",
-                }
+              encodeId === curSongID && {
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                position: "absolute",
+                backgroundColor: "rgba(0, 0, 0, 0.4)",
+              }
             )}
           >
             <span
-              onClick={() => dispatchSong(encodeId)}
+              onClick={() =>
+                streamingStatus === 1 ? dispatchSong(encodeId) : alert('Bài hát dành cho tài khoản VIP')}
               style={Object.assign(
                 {},
-                encodeId === curSongID &&
-                  isPlaying === true && { display: "block" }
+                encodeId === curSongID && { display: "block" }
               )}
             >
-              {encodeId === curSongID && isPlaying === true ? (
-                <div className="item-song_img-icon_audio">
-                  <Audio
-                    height="25"
-                    width="25"
-                    color="#fff"
-                    ariaLabel="audio-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="wrapper-class_audio align-items-center"
-                    visible={true}
-                  />
-                </div>
+              {encodeId === curSongID ? (
+                isPlaying === true ?
+                  <div className="item-song_img-icon_audio">
+                    <Audio
+                      height="25"
+                      width="25"
+                      color="#fff"
+                      ariaLabel="audio-loading"
+                      wrapperStyle={{}}
+                      wrapperClass="wrapper-class_audio align-items-center"
+                      visible={true}
+                    />
+                  </div> : <div className="item-song_img-icon_pause"><i className={start} /></div>
               ) : (
                 <i className={start} />
               )}
@@ -77,7 +78,12 @@ export default function ItemsSong(props) {
           </div>
         </div>
         <div className="item-song_content">
-          <p>{handleStringSong(title)}</p>
+          <p style={Object.assign(
+            {},
+            streamingStatus === 2 && {
+              color: "#908e92a2"
+            }
+          )}>{handleStringSong(title)}</p>
           <div className="item-song_detail-artists">
             {artists?.map(({ name, link, id }, index) => (
               <div className="artists-name" key={id}>
@@ -86,7 +92,7 @@ export default function ItemsSong(props) {
               </div>
             ))}
           </div>
-          <span>1 giờ trước</span>
+          <span>{moment(releaseDate * 1000).fromNow()}</span>
         </div>
       </div>
       <div className="item-song_icon" title="Khác">
